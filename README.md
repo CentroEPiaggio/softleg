@@ -2,7 +2,7 @@
 
 This repository contains all the required packages for using the SoftLeg developed within the Natural Intelligence EU project.
 
-![SoftFootV2](https://github.com/CentroEPiaggio/softleg/blob/master/images/softleg-rviz.png)
+![SoftFootV2](https://github.com/CentroEPiaggio/softleg/blob/main/images/softleg-rviz.png)
 
 ## Packages
 
