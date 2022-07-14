@@ -7,28 +7,22 @@
 
     <!-- INERTIA MATRICES FOR LINKS (wrt frames in urdf inertial) -->
 
-    <!-- Cart -->
-    <xacro:macro name="cart_inertia">
-        <inertia ixx="${mm2tom2 * 4.4972}" iyy="${mm2tom2 * 1.8785}" izz="${mm2tom2 * 1.0468}"
-                 ixy="${mm2tom2 * -0.0012}" ixz="${mm2tom2 * -0.0027}" iyz="${mm2tom2 * 0.0005}"/>
-    </xacro:macro>
-
     <!-- Base -->
     <xacro:macro name="base_inertia">
-        <inertia ixx="${mm2tom2 * 3.1301}" iyy="${mm2tom2 * 12.3897}" izz="${mm2tom2 * 11.8654}"
-                 ixy="${mm2tom2 * -0.3627}" ixz="${mm2tom2 * 3.6816}" iyz="${mm2tom2 * 0.1283}"/>
+        <inertia ixx="${mm2tom2 * 1698.4399}" iyy="${mm2tom2 * 20148.638}" izz="${mm2tom2 * 19764.513}"
+                 ixy="${mm2tom2 * -983.90475}" ixz="${mm2tom2 * -1305.3791}" iyz="${mm2tom2 * 153.83174}"/>
     </xacro:macro>
 
     <!-- Thigh -->
     <xacro:macro name="thigh_inertia">
-        <inertia ixx="${mm2tom2 * 3.1301}" iyy="${mm2tom2 * 12.3897}" izz="${mm2tom2 * 11.8654}"
-                 ixy="${mm2tom2 * -0.3627}" ixz="${mm2tom2 * -3.6816}" iyz="${mm2tom2 * -0.1283}"/>
+        <inertia ixx="${mm2tom2 * 750.26891}" iyy="${mm2tom2 * 4575.9812}" izz="${mm2tom2 * 5105.9889}"
+                 ixy="${mm2tom2 * -1057.6540}" ixz="${mm2tom2 * 0.071507533}" iyz="${mm2tom2 * 0.32201257}"/>
     </xacro:macro>
 
     <!-- Calf -->
     <xacro:macro name="calf_inertia">
-        <inertia ixx="${mm2tom2 * 3.1301}" iyy="${mm2tom2 * 12.3897}" izz="${mm2tom2 * 11.8654}"
-                 ixy="${mm2tom2 * -0.3627}" ixz="${mm2tom2 * -3.6816}" iyz="${mm2tom2 * -0.1283}"/>
+        <inertia ixx="${mm2tom2 * 60.006429}" iyy="${mm2tom2 * 472.43319}" izz="${mm2tom2 * 520.49867}"
+                 ixy="${mm2tom2 * -119.84835e+02}" ixz="${mm2tom2 * 0.00036890095}" iyz="${mm2tom2 * 0.00012686113}"/>
     </xacro:macro>
 
     <!-- Simple cuboid -->

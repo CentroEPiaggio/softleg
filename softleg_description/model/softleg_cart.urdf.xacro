@@ -3,10 +3,9 @@
 
     <!-- Properties -->
     <xacro:property name="const_pi" value="3.1415926535897931"/>
-    <xacro:property name="cart_mass" value="0.0181"/>
-    <xacro:property name="base_mass" value="0.0256"/>
-    <xacro:property name="thigh_mass" value="0.0177"/>
-    <xacro:property name="calf_mass" value="0.0177"/>
+    <xacro:property name="base_mass" value="0.97245523"/>
+    <xacro:property name="thigh_mass" value="0.43578906"/>
+    <xacro:property name="calf_mass" value="0.076217499"/>
     <xacro:property name="velocity" value="100" />
     <xacro:property name="effort" value="100" />
 
@@ -102,7 +101,7 @@
             </collision>
         </link>
 
-        <!-- 1) Thigh link - rotates w.r.t base -->
+        <!-- 2) Thigh link - rotates w.r.t base -->
         <joint name="${name}_hip_joint" type="revolute">
             <origin xyz="0.255 0 0.07" rpy="${90 * const_pi / 180} 0 0"/>
             <axis xyz="0 1 0"/>
@@ -152,7 +151,7 @@
             </collision>
         </link>
 
-        <!-- 1) Calf link - rotates w.r.t thigh -->
+        <!-- 3) Calf link - rotates w.r.t thigh -->
         <joint name="${name}_knee_joint" type="revolute">
             <origin xyz="0.175 0.0275 0" rpy="${90 * const_pi / 180} 0 0"/>
             <axis xyz="0 0 -1"/>
@@ -200,6 +199,19 @@
                     <cylinder length="0.0125" radius="0.0075"/>
                 </geometry>
             </collision>
+        </link>
+
+        <!-- 4) Contact link - Fixed -->
+        <joint name="${name}_contact_joint" type="fixed">
+            <origin xyz="0.185 0 -0.02" rpy="${90 * const_pi / 180} 0 0"/>
+            <parent link="${name}_calf_link"/>
+            <child link="${name}_contact_link"/>
+        </joint>
+
+        <link name="${name}_contact_link">
+            <inertial>
+                <xacro:insert_block name="really_negligible_inertia"/>
+            </inertial>
         </link>
 
         <!-- Gazebo elements -->
